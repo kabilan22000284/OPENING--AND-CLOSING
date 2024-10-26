@@ -30,6 +30,7 @@ Register no : 212222100018
 ```
 
 #### Import the necessary packages
+
 ``` Python
 import numpy as np
 import cv2
@@ -37,6 +38,7 @@ import matplotlib.pyplot as plt
 ```
 
 #### Read and show the Original image
+
 ``` Python
 image = cv2.imread("fingerprint.png")
 kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
@@ -49,8 +51,8 @@ plt.axis("off")
 
 
 #### Use Opening operation
-```py
 
+```
 opening_image = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
 opening_image_rgb = cv2.cvtColor(opening_image, cv2.COLOR_BGR2RGB)
 plt.imshow(opening_image_rgb)
@@ -60,9 +62,8 @@ plt.axis("off")
 
 
 #### Use Closing Operation
-```py
 
-
+```
 closing_image = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
 closing_image_rgb = cv2.cvtColor(closing_image, cv2.COLOR_BGR2RGB)
 plt.imshow(closing_image_rgb)
